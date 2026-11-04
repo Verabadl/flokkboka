@@ -20,7 +20,7 @@ window.ARTER = {
   hund: {
     navn: "Hund", ikon: "H", idLabel: "Reg.nr (NKK)", idEksempel: "f.eks. NO45678/22",
     hunn: "Tispe", hann: "Hannhund", ung: "Valp", morL: "Mor (tispe)", farL: "Far (hannhund)",
-    raser: ["Border collie","Kelpie","Australian shepherd","Old english sheepdog","Norsk elghund grå","Norsk buhund","Labrador retriever","Blanding"],
+    raser: ["Border collie","Kelpie","Kleiner Münsterländer","Australian shepherd","Old english sheepdog","Norsk elghund grå","Norsk buhund","Labrador retriever","Blanding"],
     statuser: ["Aktiv","Solgt","Omplassert","Død","Utmeldt"],
     ekstra: [
       { k: "chip", l: "Chip-nr" }, { k: "kallenavn", l: "Kallenavn" },
