@@ -1,0 +1,21 @@
+{
+  "name": "Flokkboka",
+  "short_name": "Flokkboka",
+  "description": "Digitalt arkiv for sau, geit, storfe, hund og hest",
+  "lang": "nb",
+  "start_url": "./?vis=hjem",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef1ec",
+  "theme_color": "#1d2a24",
+  "icons": [
+    { "src": "assets/ikoner/ikon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/ikoner/ikon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/ikoner/ikon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Favoritter", "url": "./?vis=hjem", "icons": [{ "src": "assets/ikoner/ikon-192.png", "sizes": "192x192" }] },
+    { "name": "Nytt individ", "url": "./?vis=ny", "icons": [{ "src": "assets/ikoner/ikon-192.png", "sizes": "192x192" }] },
+    { "name": "Felles observasjon", "url": "./?vis=felles", "icons": [{ "src": "assets/ikoner/ikon-192.png", "sizes": "192x192" }] }
+  ]
+}

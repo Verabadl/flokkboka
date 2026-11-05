@@ -1,6 +1,8 @@
 // Dyreslag i Flokkboka. Legg til en ny art ved å kopiere en blokk og tilpasse den.
 // "ekstra"-feltene lagres i kolonnen dyr.ekstra (jsonb), så databasen trenger ingen endring.
 // hunnP/hannP/ungP er flertallsformer som brukes i tellere og rapporter.
+// hannKastrert + kastrertFelt: kjønnsbetegnelse for kastrerte hanndyr (vallak, kastrat) styrt av et ja/nei-felt.
+// Felt med type "date" vises som datovelger og tolkes som dato ved Excel-import.
 // Raselistene er forslag i skjemaet; annen rase kan skrives inn fritt.
 window.ARTER = {
   sau: {
@@ -47,6 +49,36 @@ window.ARTER = {
       { n: "Observasjon", obs: true }
     ]
   },
+  storfe: {
+    navn: "Storfe", ikon: "St", idLabel: "Individnr (øremerke)", idEksempel: "f.eks. NO 1234567 0123 4",
+    hunn: "Ku", hann: "Okse", ung: "Kalv", hunnP: "Kyr/kviger", hannP: "Okser", ungP: "Kalver",
+    hannKastrert: "Kastrat", kastrertFelt: "kastrert", morL: "Mor (ku)", farL: "Far (okse)",
+    raser: [
+      "NRF (Norsk rødt fe)", "STN (Sidet trønder- og nordlandsfe)", "Vestlandsk raudkolle", "Vestlandsk fjordfe",
+      "Østlandsk raudkolle", "Telemarkfe", "Dølafe", "Hereford", "Aberdeen Angus", "Charolais", "Limousin",
+      "Simmental", "Highland", "Tiroler grauvieh", "Blonde d'Aquitaine", "Dexter", "Holstein", "Jersey", "Kryssing"
+    ],
+    statuser: ["Aktiv", "Solgt", "Slaktet", "Død", "Nødslaktet", "Utmeldt"],
+    ekstra: [
+      { k: "bruk", l: "Bruk", opts: ["", "Melkeku", "Ammeku", "Kvige", "Avlsokse", "Slakt", "Påsett"] },
+      { k: "kastrert", l: "Kastrert", opts: ["", "Nei", "Ja"] },
+      { k: "fodselsforlop", l: "Fødselsforløp", opts: ["", "Lett", "Normal", "Tung", "Keisersnitt"] },
+      { k: "fodselstype", l: "Fødselstype", opts: ["", "Enkel", "Tvilling", "Trilling"] },
+      { k: "fodselsvekt", l: "Fødselsvekt (kg)", type: "number" },
+      { k: "horn", l: "Horn", opts: ["", "Kollet", "Hornet", "Avhornet"] },
+      { k: "laktasjon", l: "Laktasjonsnr", type: "number" },
+      { k: "hdr_meldt", l: "Meldt til Husdyrregisteret", type: "date" }
+    ],
+    hendelser: [
+      { n: "Kalving", v: "Antall kalver" }, { n: "Inseminering", v: "Okse/sæd" }, { n: "Naturlig bedekning", v: "Okse" },
+      { n: "Drektighetsundersøkelse", v: "Resultat" }, { n: "Tørrlegging" }, { n: "Melkekontroll", v: "kg/dag" },
+      { n: "Celletall", v: "1000 celler/ml" }, { n: "Veiing", v: "Vekt (kg)" }, { n: "Holdvurdering", v: "Poeng 1–5" },
+      { n: "Medisinsk behandling", v: "Preparat/dose" }, { n: "Vaksinering" }, { n: "Ormebehandling" },
+      { n: "Avhorning" }, { n: "Kastrering" }, { n: "Klauvskjæring" }, { n: "Avvenning" }, { n: "Beiteslipp" },
+      { n: "Innsett" }, { n: "Flytting" }, { n: "Melding til Husdyrregisteret", v: "Meldingstype" },
+      { n: "Slaktevurdering", v: "Klasse/fett" }, { n: "Observasjon", obs: true }
+    ]
+  },
   hund: {
     navn: "Hund", ikon: "Hu", idLabel: "Reg.nr (NKK)", idEksempel: "f.eks. NO45678/22",
     hunn: "Tispe", hann: "Hannhund", ung: "Valp", hunnP: "Tisper", hannP: "Hannhunder", ungP: "Valper",
@@ -76,7 +108,7 @@ window.ARTER = {
   hest: {
     navn: "Hest", ikon: "He", idLabel: "UELN / reg.nr", idEksempel: "f.eks. 578001020212345",
     hunn: "Hoppe", hann: "Hingst", ung: "Føll", hunnP: "Hopper", hannP: "Hingster/vallaker", ungP: "Føll",
-    hannKastrert: "Vallak", morL: "Mor (hoppe)", farL: "Far (hingst)",
+    hannKastrert: "Vallak", kastrertFelt: "vallak", morL: "Mor (hoppe)", farL: "Far (hingst)",
     raser: [
       "Fjordhest", "Dølahest", "Nordlandshest/lyngshest", "Kaldblodstraver", "Varmblodstraver",
       "Varmblods ridehest", "Hannoveraner", "Holsteiner", "Oldenburger", "Trakehner", "KWPN",
